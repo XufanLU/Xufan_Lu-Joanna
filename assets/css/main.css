@@ -512,7 +512,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 0px;
   position: relative;
 }
 
@@ -524,7 +524,7 @@ section,
   position: relative;
 }
 .section-title h3 {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -890,15 +890,17 @@ section,
   color: var(--accent-color);
 }
 
-.portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
-  font-size: 34px;
-  line-height: 0;
-}
 
-.portfolio .portfolio-content:hover .portfolio-info {
-  opacity: 1;
-}
+  .portfolio .portfolio-content .portfolio-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
+      padding: 20px;
+      z-index: 2;
+      pointer-events: none; 
+    }
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
@@ -1215,6 +1217,75 @@ section,
   padding: 0;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
+
+ .portfolio  .carousel-indicators {
+    bottom: -50px; /* Adjust how far down you want it; try -20px or -40px if needed */
+  }
+
+  /* Make indicators blue */
+ .portfolio .carousel-indicators [data-bs-target] {
+    background-color: #47b2e4; /* Bootstrap primary blue */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Optional: active indicator a darker blue for contrast */
+ .portfolio  .carousel-indicators .active {
+    background-color: #5bc5f8;
+  }
+
+
+
+
+.carousel-item {
+      min-height: 350px;
+
+    }
+
+.carousel-item .row{
+        justify-content: center; 
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+      bottom: -30px; /* Adjust this value to move the buttons further down */
+      top: auto; 
+      transform: translateY(0);
+    }
+
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%235bc5f8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='9 18 15 12 9 6'/%3e%3c/svg%3e");
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%235bc5f8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='15 18 9 12 15 6'/%3e%3c/svg%3e");
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+
+
+
+
+
+
+
+.carousel-inner {
+  display: flex;
+}
+
 
 /*--------------------------------------------------------------
 # Service Details Section
